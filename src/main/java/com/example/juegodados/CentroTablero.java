@@ -1,6 +1,7 @@
 package com.example.juegodados;
 
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -20,17 +21,21 @@ public class CentroTablero extends VBox {
 //Centro del tablero contendra un boton(lanzar) y 3 dadosUI
     public CentroTablero() {
         rondas = new Label();
-        rondas.setText("Rondas = 0");
+        rondas.setText("Ronda #0");
         contenedorDados = new HBox();
+        contenedorDados.setAlignment(Pos.CENTER);
         contenedorDados.setSpacing(5);
         dado1 = new DadoUI(1);
         dado2 = new DadoUI(2);
         dado3 = new DadoUI(3);
         contenedorDados.getChildren().addAll(dado1, dado2, dado3);
         lanzar = new Button("Lanzar");
+        lanzar.setStyle("-fx-font-family: 'CooperBits'; -fx-background-color: #e47025;");
 
         this.getChildren().addAll(rondas, contenedorDados, lanzar);
         this.setSpacing(5);
+        this.setStyle("-fx-alignment: center; -fx-background-color: #efc070; -fx-font-family: Dyuthi; -fx-font-size: 28;");
+        this.setAlignment(Pos.CENTER);
 
     }
     public void setDados(int[] valores){
@@ -41,7 +46,7 @@ public class CentroTablero extends VBox {
     }
 
     public void actualizarRonda(int rondas){
-        this.rondas.setText("Rondas = " + rondas);
+        this.rondas.setText("Ronda #" + rondas);
     }
 
     public Button getBotonLanzar() {

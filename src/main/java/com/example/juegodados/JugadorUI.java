@@ -4,9 +4,9 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 public class JugadorUI extends VBox {
-    private static final String COLOR_ACTIVO = "#99FF99";
-    private static final String COLOR_INACTIVO = "#FF9933";
-    private static final String ESTILO_BASE = "-fx-alignment: CENTER; -fx-padding: 10; -fx-border-color: lightgray; -fx-border-width: 1;";
+    private static final String COLOR_ACTIVO = "fff5b6";
+    private static final String COLOR_INACTIVO = "#efc070";
+    private static final String ESTILO_BASE = "-fx-alignment: CENTER; -fx-padding: 10;";
 
     private Jugador jugador;
     private Label nombreJugador;
@@ -17,11 +17,10 @@ public class JugadorUI extends VBox {
         nombreJugador = new Label();
         puntosJugador = new Label();
         actualizarInfo();
-        this.setSpacing(5);
         this.setStyle(estiloConColor(COLOR_INACTIVO));
 
-        nombreJugador.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
-        puntosJugador.setStyle("-fx-font-size: 24px; -fx-text-fill: #333;");
+        nombreJugador.setStyle("-fx-font-size: 32; -fx-font-family: 'CooperBits';");
+        puntosJugador.setStyle("-fx-font-size: 24px; -fx-font-family: 'Dyuthi';");
 
         this.getChildren().addAll(nombreJugador,puntosJugador);
     }
@@ -50,7 +49,7 @@ public class JugadorUI extends VBox {
     }
 
     private void actualizarInfo(){
-        nombreJugador.setText("Jugador: \n"+jugador.getNombre());
+        nombreJugador.setText(jugador.getNombre());
         puntosJugador.setText(String.valueOf(jugador.getPuntos() + " Puntos"));
     }
 }
